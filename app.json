@@ -1,0 +1,52 @@
+{
+	"id": "be.hln.headlines",
+	"name": {
+		"nl": "HLN Headlines",
+		"en": "HLN Headlines"
+	},
+	"version": "0.1.4",
+	"compatibility": "0.x || 1.x",
+	"author": {
+		"name": "Marco van 't Klooster",
+		"email": "info@marcovantklooster.nl",
+		"website": "http://www.marcovantklooster.nl"
+	},
+	"flow": {
+		"actions": [{
+			"id": "readNews",
+			"title": {
+				"en": "Read the news",
+				"nl": "Lees het nieuws"
+			}
+		}]
+	},
+	"contributors": {
+		"developers": [{
+			"name": "Matjaž Lipuš",
+			"website": "http://matjaz.info",
+			"email": "matjazl@gmail.com"
+		}, {
+			"name": "Christian Versloot",
+			"email": "mail@christianversloot.nl",
+			"website": "https://github.com/chrisv95/nl.webchitect.newsheadlines"
+		}]
+	},
+	"images": {
+		"large": "./assets/images/large.jpg",
+		"small": "./assets/images/small.jpg"
+	},
+	"permissions": ["homey:manager:speech-input", "homey:manager:speech-output"],
+	"description": {
+		"nl": "Deze app verteld je het recente nieuws van de HLN Headlines",
+		"en": "This app tells you the most recent HLN news headlines."
+	},
+	"speech": [{
+		"id": "newsheadline",
+		"importance": 0.8,
+		"triggers": {
+			"nl": ["headline", "headlines", "laatste nieuws", "lees het nieuws", "nieuws alsjeblieft", "nieuws alstublieft", "nieuws aub", "nieuws berichten", "nieuws headline", "nieuws headlines", "nieuwsberichten", "recent nieuws", "recente nieuwsberichten", "recenten nieuwsberichten", "vertel het nieuws", "vertel mij het nieuws", "wat gebeurt er in de wereld", "wat gebeurt er in europa", "wat gebeurt er in belgie", "wat is er aan de hand in de wereld", "wat is er aan de hand in europa", "wat is er aan de hand in belgie", "wat is er aan de hand", "wat is er op het nieuws", "wat is er op het nieuws", "wat is het nieuws", "wat zijn de nieuwsberichten"],
+			"en": ["news headline", "news headlines", "headline", "headlines", "recent news", "what is the news", "news please"]
+		}
+	}],
+	"category": "internet"
+}

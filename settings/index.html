@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+    <head>
+
+    </head>
+    <body>
+
+        <h1>HLN Headlines</h1>
+        <p>Op deze pagina zijn de instellingen aan te passen van de HLN Headlines app</p>
+
+        <p id="error" style="color: red;"></p>
+        <p id="success" style="color: #5fd225;"></p>
+
+        <fieldset>
+            <legend>Instellingen</legend>
+
+            <div class="field row">
+                <label for="numberOfNewsArticles">Aantals Berichten (max 20)</label>
+                <input id="numberOfNewsArticles" name="numberOfNewsArticles" type="number" value="" min="1" max="20" />
+            </div>
+
+        </fieldset>
+
+        <button class="right" id="saver" onclick="save()">Opslaan</button>
+
+        <script type="text/javascript">
+        function onHomeyReady(){
+            Homey.get('numberOfNewsArticles', function(err,data) {
+                document.getElementById('numberOfNewsArticles').value = data;
+            });
+            Homey.ready();
+        }
+        function isInteger(x) {
+           var y = parseInt(x, 10);
+           return !isNaN(y) && x == y && x.toString() == y.toString();
+        }
+        function save() {
+            // Retrieve DOM elements
+            var button = document.getElementById('saver'),
+                newsBlock = document.getElementById('numberOfNewsArticles'),
+                error = document.getElementById('error'),
+                success = document.getElementById('success');
+            // Define update status
+            var update = "true";
+            // Check if news articles exceed limit; change status if the case
+            if(!isInteger(newsBlock.value)) { update = "noInt"; }
+            if (newsBlock.value > 8) { update = "trueHigh" };
+            if (newsBlock.value < 1) { update = "trueLow" };
+            // Show message in the save button
+            if(update === "true") {
+                // Set both disabled onSave
+                button.disabled = true;
+                newsBlock.disabled = true;
+                success.innerHTML = "Changes saved";
+                error.innerHTML = "";
+                document.getElementById('numberOfNewsArticles').value=newsBlock.value;
+                // Change the settings in Homey.
+                Homey.set('numberOfNewsArticles', newsBlock.value);
+                // Return to edit mode after 3.5 seconds
+                setTimeout(function() {
+                    button.disabled = false;
+                    newsBlock.disabled = false;
+                },3500);
+            }
+            else {
+                if(update === "trueHigh") {
+                    error.innerHTML="ERROR: you selected too many news articles. The maximum is 8 articles.";
+                }
+                else if (update === "noInt") {
+                    error.innerHTML="ERROR: you did not provide an integer. You need to provide an integer between 1 and 8.";
+                }
+                else {
+                    error.innerHTML="ERROR: you selected too few news articles. The minimum is 1 article.";
+                }
+            }
+        }
+        </script>
+
+    </body>
+</html>
