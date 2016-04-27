@@ -1,4 +1,4 @@
-# NOS Headlines
+# HLN Headlines
         
 Deze app verteld je het laatste nieuws
 Bron: HLN
