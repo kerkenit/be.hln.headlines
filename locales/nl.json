@@ -1,1 +1,45 @@
-{}
+{
+	"settings": {
+		"page": {
+			"title": "HLN Headlines",
+			"description": "Op deze pagina zijn de instellingen aan te passen van de HLN Headlines app"
+		},
+		"controls": {
+			"legend": "Instellingen",
+			"label": "Aantal nieuws berichten (max 20)",
+			"save": "Opslaan"
+		},
+		"success": "Wijzigingen opgeslagen",
+		"error": {
+			"error": "Fout",
+			"trueHigh": "U heeft te veel nieuwsartikelen geselecteerd. Het maximum is 20 artikelen.",
+			"trueLow": "U heeft te weinig nieuwsartikelen geselecteerd. Het minimum is 1 artikel.",
+			"noInt": "U heeft geen enkele nummer opgegeven. U moet een nummer op te geven tussen 1 en 20."
+		}
+	},
+	"app": {
+		"speechPrefix": "Uw recente nieuws berichten.",
+		"numbers": {
+			"one": "Een",
+			"two": "Twee",
+			"three": "Drie",
+			"four": "Vier",
+			"five": "Vijf",
+			"six": "Zes",
+			"seven": "Zeven",
+			"eight": "Acht",
+			"nine": "Negen",
+			"ten": "Tien",
+			"eleven": "Elf",
+			"twelve": "Twaalf",
+			"thirteen": "Dertien",
+			"fourteen": "Veertien",
+			"fiveteen": "Vijftien",
+			"sixteen": "Zestien",
+			"seventeen": "Zeventien",
+			"eightteen": "Actien",
+			"nineteen": "Negentien",
+			"twenty": "Twintig"
+		}
+	}
+}
