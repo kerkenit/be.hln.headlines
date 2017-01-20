@@ -6,7 +6,8 @@
 		},
 		"controls": {
 			"legend": "Instellingen",
-			"label": "Aantal nieuws berichten (max 20)",
+			"numberOfNewsArticles": "Aantal nieuws berichten (max 20)",
+			"newslength": "Aantal woorden per bericht",
 			"save": "Opslaan"
 		},
 		"success": "Wijzigingen opgeslagen",
@@ -20,7 +21,7 @@
 	"app": {
 		"speechPrefix": "Uw recente nieuws berichten.",
 		"numbers": {
-			"one": "Een",
+			"one": "1",
 			"two": "Twee",
 			"three": "Drie",
 			"four": "Vier",
@@ -40,6 +41,68 @@
 			"eightteen": "Actien",
 			"nineteen": "Negentien",
 			"twenty": "Twintig"
+		},
+		"findandreplace": {
+			"kmph": {
+				"find": "km/u",
+				"replace": "kilometer per uur"
+			},
+			"mph": {
+				"find": "mph",
+				"replace": "mijlen per uur"
+			},
+			"co2": {
+				"find": "CO2",
+				"replace": "C O 2"
+			},
+			"rivm": {
+				"find": "RIVM",
+				"replace": "R I V M"
+			},
+			"om": {
+				"find": "OM",
+				"replace": "O M"
+			},
+			"rdw": {
+				"find": "RDW",
+				"replace": "R D W"
+			},
+			"who": {
+				"find": "WHO",
+				"replace": "W H O"
+			},
+			"wmo": {
+				"find": "WMO",
+				"replace": "W M O"
+			},
+			"bbc": {
+				"find": "BBC",
+				"replace": "Bie Bie Sie"
+			},
+			"youp": {
+				"find": "Youp",
+				"replace": "Joep"
+			},
+			"nos": {
+				"find": "NOS",
+				"replace": "En O Es"
+			},
+			"taser": {
+				"find": "'taser'",
+				"replace": "'teeser'"
+			},
+			"is": {
+				"find": " IS ",
+				"replace": " IE ES "
+			},
+			"nasa": {
+				"find": "NASA",
+				"replace": "Na Sa"
+			},
+			"elnino": {
+				"find": "El Niño",
+				"replace": "El Nien jo"
+			}
 		}
 	}
 }

@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 	<head></head>
 	<body>
@@ -9,8 +9,12 @@
 		<fieldset>
 			<legend data-i18n="settings.controls.legend"></legend>
 			<div class="field row">
-				<label for="numberOfNewsArticles" data-i18n="settings.controls.label"></label>
-				<input id="numberOfNewsArticles" name="numberOfNewsArticles" type="number" value="" min="1" max="20" />
+				<label for="numberOfNewsArticles" data-i18n="settings.controls.numberOfNewsArticles" style="width:16em;"></label>
+				<input id="numberOfNewsArticles" name="numberOfNewsArticles" type="number" value="" min="1" max="20" style="width:3em;" />
+			</div>
+			<div class="field row">
+				<label for="newslength" data-i18n="settings.controls.newslength" style="width:16em;"></label>
+				<input id="newslength" name="newslength" type="number" value="" min="0" max="2500" step="10" style="width:3em;" />
 			</div>
 		</fieldset>
 		<button class="right" id="saver" onclick="save()" data-i18n="settings.controls.save"></button>
@@ -19,6 +23,10 @@
 			Homey.get('numberOfNewsArticles', function(err, data) {
 				document.getElementById('numberOfNewsArticles').value = data;
 			});
+			Homey.get('newslength', function(err, data) {
+				document.getElementById('newslength').value = data;
+			});
+
 			Homey.ready();
 		}
 
@@ -31,6 +39,7 @@
 			// Retrieve DOM elements
 			var button = document.getElementById('saver'),
 				newsBlock = document.getElementById('numberOfNewsArticles'),
+				newslength = document.getElementById('newslength'),
 				error = document.getElementById('error'),
 				success = document.getElementById('success');
 			// Define update status
@@ -38,6 +47,10 @@
 			// Check if news articles exceed limit; change status if the case
 			if (!isInteger(newsBlock.value)) {
 				update = "noInt";
+			}
+			var length = newslength.value;
+			if (!isInteger(length)) {
+				length = 0;
 			}
 			if (newsBlock.value > 20) {
 				update = "trueHigh";
@@ -50,18 +63,22 @@
 				// Set both disabled onSave
 				button.disabled = true;
 				newsBlock.disabled = true;
+				newslength.disabled = true;
 				success.innerHTML = __('settings.success');
 				error.innerHTML = "";
 				document.getElementById('numberOfNewsArticles').value = newsBlock.value;
+				document.getElementById('newslength').value = length
 				// Change the settings in Homey.
 				Homey.set('numberOfNewsArticles', newsBlock.value);
+				Homey.set('newslength', length);
 				// Return to edit mode after 3.5 seconds
 				setTimeout(function() {
 					button.disabled = false;
 					newsBlock.disabled = false;
+					newslength.disabled = false;
 				}, 3500);
 			} else if (update === "trueHigh") {
-				Homey.alert(__('settings.error.'), 'error');
+				Homey.alert(__('settings.error.trueHigh'), 'error');
 				error.innerHTML = __('settings.error.error') + ': ' + __('settings.error.trueHigh');
 			} else if (update === "trueLow") {
 				Homey.alert(__('settings.error.trueLow'), 'error');

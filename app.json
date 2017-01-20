@@ -4,7 +4,7 @@
 		"nl": "HLN Headlines",
 		"en": "HLN Headlines"
 	},
-	"version": "0.1.5",
+	"version": "1.0.0",
 	"compatibility": "0.x || 1.x",
 	"author": {
 		"name": "Marco van 't Klooster",
@@ -17,7 +17,50 @@
 			"title": {
 				"en": "Read the news",
 				"nl": "Lees het nieuws"
-			}
+			},
+			"args": [{
+				"name": "itemcount",
+				"type": "range",
+				"min": 1,
+				"max": 20,
+				"step": 1,
+				"label": "Berichten",
+				"labelDecimals": 0
+			}, {
+				"name": "newslength",
+				"type": "dropdown",
+				"values": [{
+					"id": "headline",
+					"label": {
+						"en": "Headline only",
+						"nl": "Allees nieuws kop"
+					}
+				}, {
+					"id": "50",
+					"label": {
+						"en": "Around 50 words",
+						"nl": "Ongeveer 50 woorden"
+					}
+				}, {
+					"id": "100",
+					"label": {
+						"en": "Around 100 words",
+						"nl": "Ongeveer 100 woorden"
+					}
+				}, {
+					"id": "250",
+					"label": {
+						"en": "Around 250 words",
+						"nl": "Ongeveer 250 woorden"
+					}
+				}, {
+					"id": "full",
+					"label": {
+						"en": "Full news items",
+						"nl": "Volledig nieuwsbericht"
+					}
+				}]
+			}]
 		}]
 	},
 	"contributors": {
@@ -28,7 +71,7 @@
 		}, {
 			"name": "Christian Versloot",
 			"email": "mail@christianversloot.nl",
-			"website": "https://github.com/chrisv95/nl.webchitect.newsheadlines"
+			"website": "https://github.com/chrisv95"
 		}]
 	},
 	"images": {
