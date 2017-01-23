@@ -144,7 +144,7 @@ exports.init = function() {
 				maxNews = (maxNews > 20 ? 20 : (maxNews < 1 ? 1 : maxNews)); // Minimum of 1 article, maximum of 20 articles (~source limit)
 				newsHeadlines.push(__('app.speechPrefix'));
 				var i = 0;
-				http.get(Homey.env.feed, function(res) {
+				http.get(Homey.env.FEED, function(res) {
 					var parser = new FeedMe();
 					parser.on('item', function(item) {
 						if (i < maxNews) {

@@ -4,7 +4,7 @@
 		"nl": "HLN Headlines",
 		"en": "HLN Headlines"
 	},
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"compatibility": "0.x || 1.x",
 	"author": {
 		"name": "Marco van 't Klooster",
@@ -65,13 +65,9 @@
 	},
 	"contributors": {
 		"developers": [{
-			"name": "Matjaž Lipuš",
-			"website": "http://matjaz.info",
-			"email": "matjazl@gmail.com"
-		}, {
-			"name": "Christian Versloot",
-			"email": "mail@christianversloot.nl",
-			"website": "https://github.com/chrisv95"
+			"name": "Marco van 't Klooster",
+			"email": "info@marcovantklooster.nl",
+			"website": "http://www.marcovantklooster.nl"
 		}]
 	},
 	"images": {
