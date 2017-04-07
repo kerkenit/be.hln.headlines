@@ -4,8 +4,8 @@
 		"nl": "HLN Headlines",
 		"en": "HLN Headlines"
 	},
-	"version": "1.0.1",
-	"compatibility": "0.x || 1.x",
+	"version": "1.0.2",
+	"compatibility": "1.x",
 	"author": {
 		"name": "Marco van 't Klooster",
 		"email": "info@marcovantklooster.nl",

@@ -4,6 +4,8 @@
 }());
 exports.init = function() {
 	var striptags = require('striptags');
+	var Entities = require('html-entities').AllHtmlEntities;
+	entities = new Entities();
 	var numberOfNewsArticles = Homey.manager('settings').get('numberOfNewsArticles');
 	if (numberOfNewsArticles === undefined || numberOfNewsArticles === null) {
 		Homey.manager('settings').set('numberOfNewsArticles', 5);
@@ -84,8 +86,8 @@ exports.init = function() {
 			parser.on('item', function(item) {
 				if (i < maxNews) {
 					Homey.log(item.title);
-					var title = replaceContent(item.title.beautify());
-					var content = striptags(replaceContent(item.description));
+					var title = replaceContent(entities.decode(item.title.beautify()));
+					var content = striptags(replaceContent(entities.decode(item.description)));
 					if (title.length > 0 && content.length > 0) {
 						newsHeadlines.push(formatHeadline(headlineKeywords[i] + '. ' + title + '. '));
 						if(args.newslength === 'full') {
@@ -149,8 +151,8 @@ exports.init = function() {
 					parser.on('item', function(item) {
 						if (i < maxNews) {
 							Homey.log(item.title);
-							var title = replaceContent(item.title.beautify());
-							var content = striptags(replaceContent(item.description));
+							var title = replaceContent(entities.decode(item.title.beautify()));
+							var content = striptags(entities.decode(replaceContent(item.description)));
 							if (title.length > 0 && content.length > 0) {
 								newsHeadlines.push(formatHeadline(headlineKeywords[i] + '. ' + title + '. '));
 								if(newslength === undefined || newslength === null) {
