@@ -4,12 +4,26 @@
 		"nl": "HLN Headlines",
 		"en": "HLN Headlines"
 	},
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"compatibility": "1.x",
 	"author": {
 		"name": "Marco van 't Klooster",
 		"email": "info@marcovantklooster.nl",
 		"website": "http://www.marcovantklooster.nl"
+	},
+	"contributors": {
+		"developers": [{
+			"name": "Marco van 't Klooster",
+			"email": "info@marcovantklooster.nl",
+			"website": "https://www.marcovantklooster.nl"
+		}]
+	},
+	"contributing": {
+        "donate": {
+            "paypal": {
+                "username": "kerkenit"
+            }
+        }
 	},
 	"flow": {
 		"actions": [{
